@@ -12,8 +12,6 @@ class Solution:
                     continue
                 else:
                     if ele in hash_set:
-                        print('Row')
-                        print(row)
                         return False
                     else:
                         hash_set.add(ele)
@@ -26,8 +24,6 @@ class Solution:
                     continue
                 else:
                     if ele in hash_set:
-                        print('Col')
-                        print(x)
                         return False
                     else:
                         hash_set.add(ele)
@@ -44,8 +40,6 @@ class Solution:
                             continue
                         else:
                             if ele in hash_set:
-                                print('Sub-box')
-                                print([box_x, box_y])
                                 return False
                             else:
                                 hash_set.add(ele)
