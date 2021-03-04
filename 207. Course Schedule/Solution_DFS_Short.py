@@ -1,4 +1,5 @@
-from typing import DefaultDict, List
+from typing import List
+from collections import defaultdict
 
 
 class Solution:
@@ -7,7 +8,7 @@ class Solution:
     # Use any/all to traverse child nodes
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         # Create an adjacency list
-        graph = DefaultDict(list)
+        graph = defaultdict(list)
         for x, y in prerequisites:
             graph[x].append(y)
         # Visited status

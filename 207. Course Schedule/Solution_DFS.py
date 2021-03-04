@@ -1,4 +1,5 @@
 from typing import List
+from collections import defaultdict
 
 
 class Solution:
@@ -6,12 +7,12 @@ class Solution:
     # The question is equivalent to detecting cycles in a directed graph
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         # Create an adjacency list from the prerequisites
-        graph = [[] for _ in range(numCourses)]
+        graph = defaultdict(list)
         for x, y in prerequisites:
             graph[x].append(y)
         # Store the visited/visiting status of each node
         # -1 visited, 1 being visited, 0 not visited
-        visited = [0 for _ in range(numCourses)]
+        visited = [0] * numCourses
         # Traverse each node
         for node in range(numCourses):
             if not self.dfs(graph, visited, node):
